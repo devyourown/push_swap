@@ -6,7 +6,7 @@
 /*   By: hyojulee <hyojulee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 20:44:30 by hyojulee          #+#    #+#             */
-/*   Updated: 2022/12/16 20:51:08 by hyojulee         ###   ########.fr       */
+/*   Updated: 2022/12/16 21:37:32 by hyojulee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,13 @@
 
 void	swap(struct s_stack *stack);
 void	swap_all(struct s_stack *a, struct s_stack *b);
-void	push(struct s_stack *to, struct s_stack *from);
+void	push_to_from(struct s_stack *to, struct s_stack *from);
 void	rotate(struct s_stack *stack);
 void	rotate_all(struct s_stack *a, struct s_stack *b);
 void	reverse_rotate(struct s_stack *stack);
 void	reverse_rotate_all(struct s_stack *a, struct s_stack *b);
+
+void	sort_3(struct s_stack *a);
 
 
 #endif
