@@ -6,7 +6,7 @@
 /*   By: hyojulee <hyojulee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 21:31:56 by hyojulee          #+#    #+#             */
-/*   Updated: 2022/12/16 21:48:27 by hyojulee         ###   ########.fr       */
+/*   Updated: 2022/12/16 21:57:32 by hyojulee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 struct s_stack
 {
-	int	*stack;
-	int	index;
+	int		*stack;
+	int		index;
+	char	stack_name;
 };
 
 void	swap(struct s_stack *stack)
@@ -27,17 +28,24 @@ void	swap(struct s_stack *stack)
 	next = pop(stack);
 	push(stack, last);
 	push(stack, next);
+	write(1, "s", 1);
+	write(1, &stack->stack_name, 1);
+	write(1, "\n", 1);
 }
 
 void	swap_all(struct s_stack *a, struct s_stack *b)
 {
 	swap(a);
 	swap(b);
+	write(1, "ss\n", 3);
 }
 
 void	push_to_from(struct s_stack *to, struct s_stack *from)
 {
 	push(to, pop(from));
+	write(1, "p", 1);
+	write(1, &to->stack_name, 1);
+	write(1, "\n", 1);
 }
 
 void	rotate(struct s_stack *stack)
@@ -57,10 +65,14 @@ void	rotate(struct s_stack *stack)
 			next = temp;
 		index++;
 	}
+	write(1, "r", 1);
+	write(1, &stack->stack_name, 1);
+	write(1, "\n", 1);
 }
 
 void	rotate_all(struct s_stack *a, struct s_stack *b)
 {
 	rotate(a);
 	rotate(b);
+	write(1, "rr\n", 3);
 }

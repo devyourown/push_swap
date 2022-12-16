@@ -6,7 +6,7 @@
 /*   By: hyojulee <hyojulee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:37:13 by hyojulee          #+#    #+#             */
-/*   Updated: 2022/12/16 20:05:59 by hyojulee         ###   ########.fr       */
+/*   Updated: 2022/12/16 21:58:58 by hyojulee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 #include <stdlib.h>
 
 struct s_stack {
-	int	*stack;
-	int	index;
+	int		*stack;
+	int		index;
+	char	stack_name;
 };
 
-struct s_stack	*make_stack(int *arr, int size)
+struct s_stack	*make_stack(int *arr, int size, char name)
 {
 	struct s_stack	*stack;
 
 	stack = malloc(sizeof(struct s_stack));
 	stack->stack = arr;
 	stack->index = size - 1;
+	stack->stack_name = name;
 	return (stack);
 }
 

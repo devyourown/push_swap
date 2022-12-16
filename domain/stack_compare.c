@@ -6,15 +6,16 @@
 /*   By: hyojulee <hyojulee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 21:17:48 by hyojulee          #+#    #+#             */
-/*   Updated: 2022/12/16 21:25:48 by hyojulee         ###   ########.fr       */
+/*   Updated: 2022/12/16 21:55:20 by hyojulee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stack.h"
 
 struct s_stack {
-	int	*stack;
-	int	index;
+	int		*stack;
+	int		index;
+	char	stack_name;
 };
 
 t_boolean	is_lowhighmid(struct s_stack *stack)
